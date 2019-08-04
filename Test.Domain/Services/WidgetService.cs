@@ -1,4 +1,8 @@
-﻿using Test.Domain.App;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Test.Domain.App;
+using Test.Domain.Converters;
+using Test.DTO.Types;
 
 namespace Test.Domain.Services
 {
@@ -14,12 +18,12 @@ namespace Test.Domain.Services
             this._weather = intelex;
         }
 
-        public bool SendAllWidgetEmails()
+        public List<WeatherDTO> SendAllWidgetEmails()
         {
-            var widgets1 = this._db.widgetRepository.Get();
+            var widgets1 = this._db.widgetRepository.Get().Select(w => w.Convert()).ToList();
             var widgets2 = this._weather.geoSearchRepository.Get("Linwood", "MI", "USA", 4);
 
-            return false;
+            return widgets1;
         }
     }
 }

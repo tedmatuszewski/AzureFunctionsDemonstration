@@ -993,9 +993,9 @@ namespace Test.Data.Weather.WeatherService
         /// <param name="key">Your registered API key.</param>
         /// <returns>A forecast object.</returns>
         /// <exception cref="SwaggerException">A server side error occurred.</exception>
-        public System.Threading.Tasks.Task<ForecastHourly> 3hourlyAsync(double lat, double lon, double? days, Units9? units, Lang9? lang, string callback, string key)
+        public System.Threading.Tasks.Task<ForecastHourly> threehourlyAsync(double lat, double lon, double? days, Units9? units, Lang9? lang, string callback, string key)
         {
-            return 3hourlyAsync(lat, lon, days, units, lang, callback, key, System.Threading.CancellationToken.None);
+            return threehourlyAsync(lat, lon, days, units, lang, callback, key, System.Threading.CancellationToken.None);
         }
     
         /// <summary>Returns a 3-hourly forecast - Given a lat/lon.</summary>
@@ -1009,7 +1009,7 @@ namespace Test.Data.Weather.WeatherService
         /// <returns>A forecast object.</returns>
         /// <exception cref="SwaggerException">A server side error occurred.</exception>
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
-        public async System.Threading.Tasks.Task<ForecastHourly> 3hourlyAsync(double lat, double lon, double? days, Units9? units, Lang9? lang, string callback, string key, System.Threading.CancellationToken cancellationToken)
+        public async System.Threading.Tasks.Task<ForecastHourly> threehourlyAsync(double lat, double lon, double? days, Units9? units, Lang9? lang, string callback, string key, System.Threading.CancellationToken cancellationToken)
         {
             if (lat == null)
                 throw new System.ArgumentNullException("lat");
@@ -1021,7 +1021,7 @@ namespace Test.Data.Weather.WeatherService
                 throw new System.ArgumentNullException("key");
     
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/forecast/3hourly?");
+            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/forecast/threehourly?");
             urlBuilder_.Append("lat=").Append(System.Uri.EscapeDataString(ConvertToString(lat, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
             urlBuilder_.Append("lon=").Append(System.Uri.EscapeDataString(ConvertToString(lon, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
             if (days != null) 
@@ -1143,7 +1143,7 @@ namespace Test.Data.Weather.WeatherService
                 throw new System.ArgumentNullException("key");
     
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/forecast/3hourly/city?");
+            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/forecast/threehourly/city?");
             urlBuilder_.Append("city_id=").Append(System.Uri.EscapeDataString(ConvertToString(city_id, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
             if (days != null) 
             {
@@ -1266,7 +1266,7 @@ namespace Test.Data.Weather.WeatherService
                 throw new System.ArgumentNullException("key");
     
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/forecast/3hourly/postal?");
+            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/forecast/threehourly/postal?");
             urlBuilder_.Append("postal_code=").Append(System.Uri.EscapeDataString(ConvertToString(postal_code, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
             if (country != null) 
             {
@@ -1395,7 +1395,7 @@ namespace Test.Data.Weather.WeatherService
                 throw new System.ArgumentNullException("key");
     
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/forecast/3hourly/geosearch?");
+            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/forecast/threehourly/geosearch?");
             urlBuilder_.Append("city=").Append(System.Uri.EscapeDataString(ConvertToString(city, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
             if (state != null) 
             {
@@ -1491,7 +1491,7 @@ namespace Test.Data.Weather.WeatherService
             }
         }
     
-        /// <summary>Returns a 3hourly forecast - Given an IP Address, or ip=auto for automatic IP lookup.</summary>
+        /// <summary>Returns a threehourly forecast - Given an IP Address, or ip=auto for automatic IP lookup.</summary>
         /// <param name="ip">IP address, or auto. Example: ip=auto</param>
         /// <param name="days">Number of days to return. Default 16.</param>
         /// <param name="units">Convert to units. Default Metric See <a href='/api/requests'>units field description</a></param>
@@ -1505,7 +1505,7 @@ namespace Test.Data.Weather.WeatherService
             return Ip2Async(ip, days, units, lang, callback, key, System.Threading.CancellationToken.None);
         }
     
-        /// <summary>Returns a 3hourly forecast - Given an IP Address, or ip=auto for automatic IP lookup.</summary>
+        /// <summary>Returns a threehourly forecast - Given an IP Address, or ip=auto for automatic IP lookup.</summary>
         /// <param name="ip">IP address, or auto. Example: ip=auto</param>
         /// <param name="days">Number of days to return. Default 16.</param>
         /// <param name="units">Convert to units. Default Metric See <a href='/api/requests'>units field description</a></param>
@@ -1524,7 +1524,7 @@ namespace Test.Data.Weather.WeatherService
                 throw new System.ArgumentNullException("key");
     
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/forecast/3hourly/ip?");
+            urlBuilder_.Append(BaseUrl != null ? BaseUrl.TrimEnd('/') : "").Append("/forecast/threehourly/ip?");
             urlBuilder_.Append("ip=").Append(System.Uri.EscapeDataString(ConvertToString(ip, System.Globalization.CultureInfo.InvariantCulture))).Append("&");
             if (days != null) 
             {

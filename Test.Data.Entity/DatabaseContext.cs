@@ -7,16 +7,19 @@ namespace Test.Data.Entity
 {
     public class DatabaseContext : IDisposable, IDatabaseContext
     {
+        private TestDbContext context;
+
         public DatabaseContext()
         {
-            this.widgetRepository = new WidgetRepository();
+            this.context = new TestDbContext(new Microsoft.EntityFrameworkCore.DbContextOptions<TestDbContext>());
+            this.widgetRepository = new WidgetRepository(context);
         }
 
         public IWidgetRepository widgetRepository { get; }
 
         public void Save()
         {
-            //context.SaveChanges();
+            context.SaveChanges();
         }
 
         private bool disposed = false;
@@ -27,7 +30,7 @@ namespace Test.Data.Entity
             {
                 if (disposing)
                 {
-                    //context.Dispose();
+                    context.Dispose();
                 }
             }
 

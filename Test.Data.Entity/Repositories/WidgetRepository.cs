@@ -1,13 +1,22 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
+using Test.Domain.Entities.Database;
 using Test.Domain.Repositories.Database;
 
 namespace Test.Data.Entity.Repositories
 {
-    public class WidgetRepository : IWidgetRepository
+    internal class WidgetRepository : BaseRepository<Weather>, IWidgetRepository
     {
-        public List<int> Get()
+        internal WidgetRepository(TestDbContext dbContext) : base(dbContext)
         {
-            return new List<int>();
+        }
+
+        public IEnumerable<Weather> Get()
+        {
+            var result = this._context.Weather.AsNoTracking().Where(x => x.Deleted == false).AsEnumerable();
+
+            return result;
         }
     }
 }

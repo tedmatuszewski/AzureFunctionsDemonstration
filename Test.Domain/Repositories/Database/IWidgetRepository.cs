@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Test.Domain.Repositories.Database
 {
     public interface IWidgetRepository
     {
-        List<int> Get();
+        IEnumerable<Test.Domain.Entities.Database.Weather> Get();
     }
 }

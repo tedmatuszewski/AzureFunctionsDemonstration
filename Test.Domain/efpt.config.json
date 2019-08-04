@@ -1,0 +1,1 @@
+﻿{"ContextClassName":"TestDBContext","DefaultDacpacSchema":null,"IdReplace":false,"IncludeConnectionString":false,"OutputPath":"Entities\/Database","ProjectRootNamespace":"Test.Domain","SelectedToBeGenerated":0,"Tables":[{"HasPrimaryKey":true,"Name":"dbo.Weather"}],"UseDatabaseNames":false,"UseFluentApiOnly":true,"UseHandleBars":true,"UseInflector":false}

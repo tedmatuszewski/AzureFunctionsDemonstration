@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using Test.DTO.Types;
 
 namespace Test.Domain.Services
 {
     public partial interface ITestService
     {
-        bool SendAllWidgetEmails();
+        List<WeatherDTO> SendAllWidgetEmails();
     }
 }
